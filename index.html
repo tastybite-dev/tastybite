@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TastyBite — good food, great vibes. Browse Nigerian favourites and place your order.">
+<title>TastyBite | Good Food. Great Vibes.</title>
+<style>
+:root{--ink:#17130f;--cream:#fffaf2;--orange:#ffad16;--orange2:#f68b08;--muted:#6d6a65;--line:#ece6dd;--green:#08734b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--cream)}button,input,textarea,select{font:inherit}button{cursor:pointer}.topbar{height:74px;background:#17130f;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 max(4vw,20px);gap:20px;position:sticky;top:0;z-index:10;box-shadow:0 3px 15px #0002}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:24px;letter-spacing:-.7px}.brand-mark{width:42px;height:42px;border-radius:14px;background:var(--orange);display:grid;place-items:center;color:#211707;font-size:25px}.brand span{color:var(--orange)}.tagline{font-size:11px;color:#d8d0c3;margin-top:1px}.nav{display:flex;gap:26px;align-items:center}.nav a{color:#f5eee3;text-decoration:none;font-size:14px}.nav a:hover{color:var(--orange)}.cart-jump,.primary{border:0;background:var(--orange);color:#201607;border-radius:999px;padding:13px 21px;font-weight:800}.cart-jump:hover,.primary:hover{background:#ffc04a;transform:translateY(-1px)}.hero{min-height:330px;background:#25160b url('tastybite-hero.png') center 38%/cover no-repeat;position:relative;color:white;display:flex;align-items:center;padding:45px max(5vw,22px)}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,12,7,.95) 0%,rgba(18,12,7,.79) 36%,rgba(18,12,7,.15) 77%,rgba(18,12,7,.1))}.hero-copy{position:relative;max-width:520px}.eyebrow{font-size:13px;color:#ffe1a6;letter-spacing:.4px}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.02;margin:14px 0;font-weight:900;letter-spacing:-1.8px}.hero h1 span{color:var(--orange)}.hero p{line-height:1.6;color:#f2e8db;max-width:400px}.section{padding:34px max(4vw,18px)}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}.section h2{font-size:27px;margin:0 0 6px;letter-spacing:-.8px}.sub{color:var(--muted);font-size:14px;margin:0}.filters{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}.filter{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 16px;color:#413c35;font-weight:700}.filter.active,.filter:hover{background:var(--orange);border-color:var(--orange)}.layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:24px;align-items:start}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.food-card{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 5px 18px #3a26100a;display:flex;flex-direction:column}.food-photo{height:145px;display:grid;place-items:center;font-size:72px;background:linear-gradient(135deg,#ffdf9d,#f5a54a)}.food-photo.rice{background:linear-gradient(135deg,#f8d8a4,#d9692a)}.food-photo.soup{background:linear-gradient(135deg,#d9e9ae,#6b8b3b)}.food-photo.snack{background:linear-gradient(135deg,#ffe4b8,#e98c48)}.food-info{padding:14px;display:flex;flex-direction:column;flex:1}.food-info h3{font-size:16px;margin:0 0 7px}.food-info p{font-size:13px;line-height:1.45;color:var(--muted);margin:0 0 12px;flex:1}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:900;margin-bottom:12px}.add{width:100%;border:0;border-radius:10px;background:#201911;color:white;padding:11px;font-weight:800}.add:hover{background:var(--orange);color:#211707}.cart{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;position:sticky;top:95px}.cart h2{font-size:21px;margin:0 0 16px}.empty{padding:25px 5px;text-align:center;color:var(--muted);font-size:14px}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-item strong{font-size:14px}.cart-item small{display:block;color:var(--muted);margin-top:4px}.qty{display:flex;align-items:center;gap:8px;margin-top:8px}.qty button{border:1px solid var(--line);background:#fff8eb;border-radius:7px;width:27px;height:27px;font-weight:900}.remove{border:0;background:none;color:#8a8177;font-size:12px;text-decoration:underline;margin-top:6px}.total{display:flex;justify-content:space-between;font-weight:900;font-size:18px;padding:18px 0}.checkout-btn{width:100%;border:0;border-radius:11px;background:var(--orange);padding:14px;font-weight:900}.fineprint{font-size:11px;color:var(--muted);line-height:1.45;margin-top:10px}.checkout{background:#f5eee4;padding:40px max(4vw,18px)}.checkout h2{font-size:28px;margin:0 0 7px}.steps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:22px}.panel h3{margin:0 0 7px}.panel .sub{margin-bottom:18px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}.field label{font-size:13px;font-weight:800}.field input,.field textarea,.field select{width:100%;border:1px solid #dcd4c9;border-radius:10px;padding:12px;background:#fffdf9;outline:none}.field input:focus,.field textarea:focus{border-color:var(--orange2);box-shadow:0 0 0 3px #ffad162b}.field textarea{min-height:78px;resize:vertical}.account{background:#fff7e8;border:1px dashed #e5a83d;border-radius:13px;padding:16px;margin:14px 0}.account-label{font-size:12px;color:var(--muted);margin-bottom:4px}.account-number{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:23px;font-weight:900;letter-spacing:.5px}.copy{border:0;border-radius:8px;background:#211910;color:white;padding:9px 11px;font-size:12px;font-weight:800}.account p{margin:8px 0 0;font-size:13px;line-height:1.6}.notice{font-size:13px;line-height:1.5;background:#fff1d4;border-radius:10px;padding:12px;margin:12px 0}.confirm-box{display:none;border-radius:14px;padding:18px;background:#e6f8ed;border:1px solid #b5e7c8;color:#075b3c;margin-top:16px}.confirm-box h3{margin:0 0 8px}.confirm-box p{line-height:1.5}.status{display:inline-block;background:#fff0cb;color:#6b4600;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900}.footer{background:#17130f;color:#f6efe4;padding:25px max(4vw,18px);display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:12px}.footer p{color:#c6bcae;margin:5px 0}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#17130f;color:white;padding:12px 18px;border-radius:999px;z-index:30;display:none;box-shadow:0 5px 20px #0003;font-size:14px}
+@media(max-width:950px){.layout{grid-template-columns:1fr}.cart{position:static}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{background-position:60% center}.steps{grid-template-columns:1fr}}@media(max-width:600px){.topbar{height:auto;min-height:65px;padding:12px 16px}.nav{display:none}.brand{font-size:21px}.cart-jump{padding:10px 14px}.hero{min-height:355px;padding:35px 20px;background-position:58% center}.hero:before{background:linear-gradient(90deg,rgba(18,12,7,.9),rgba(18,12,7,.48))}.section{padding:25px 15px}.section-head{align-items:start;flex-direction:column}.menu-grid{grid-template-columns:1fr 1fr;gap:10px}.food-photo{height:105px;font-size:50px}.food-info{padding:11px}.food-info h3{font-size:14px}.food-info p{font-size:12px}.price-row{font-size:14px}.add{font-size:12px;padding:10px 5px}.panel{padding:17px}.account-number{font-size:19px}.footer{flex-direction:column;align-items:flex-start}}
+
+/* TastyBite premium design upgrade */
+:root { --ink:#20180f; --cream:#fffaf3; --orange:#f5a623; --orange2:#dc8610; --muted:#756b60; --line:#eee2d2; }
+body { font-family: "Segoe UI", Arial, sans-serif; letter-spacing: .1px; }
+.topbar { padding-left:max(6vw,24px); padding-right:max(6vw,24px); backdrop-filter:blur(12px); }
+.brand-mark { box-shadow:0 5px 16px #ffad1633; }
+.hero { min-height:420px; padding-top:65px; padding-bottom:65px; }
+.hero h1 { line-height:1.08; letter-spacing:-1.5px; }
+.hero p { font-size:16px; line-height:1.8; }
+.section { padding-top:48px; padding-bottom:48px; }
+.section h2 { letter-spacing:-.6px; }
+.food-card { border-radius:20px; box-shadow:0 8px 26px #38230d0b; transition:transform 180ms ease, box-shadow 180ms ease; }
+.food-card:hover { transform:translateY(-4px); box-shadow:0 14px 32px #38230d16; }
+.food-info { padding:17px; }
+.food-info h3 { line-height:1.4; }
+.add,.checkout-btn,.primary,.cart-jump { transition:background 180ms ease, transform 180ms ease; }
+.add { border-radius:12px; }
+.cart { box-shadow:0 8px 28px #38230d0b; }
+.panel { box-shadow:0 8px 25px #38230d08; }
+.field input,.field textarea,.field select { min-height:46px; }
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible { outline:3px solid #f5a62388; outline-offset:3px; }
+@media (max-width:600px) { .hero { min-height:370px; } .section { padding-top:32px; padding-bottom:32px; } .food-photo { min-height:110px; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" style="text-decoration:none;color:white"><div class="brand-mark">♨</div><div>Tasty<span>Bite</span><div class="tagline">Good Food. Great Vibes.</div></div></a>
+  <nav class="nav"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#checkout">Checkout</a></nav>
+  <button class="cart-jump" onclick="document.querySelector('#cart').scrollIntoView({behavior:'smooth'})">🛒 Cart <span id="cart-count">0</span></button>
+</header>
+<section class="hero" id="home"><div class="hero-copy"><div class="eyebrow">FRESH INGREDIENTS &nbsp;•&nbsp; DELICIOUS MEALS &nbsp;•&nbsp; ALWAYS READY</div><h1>Good Food<br><span>Brings People Together.</span></h1><p>From Nigerian favourites to new cravings, find tasty meals made for your day. Choose your favourites and place your order in a few easy steps.</p><button class="primary" onclick="document.querySelector('#menu').scrollIntoView({behavior:'smooth'})">Explore the Menu&nbsp; →</button></div></section>
+<main>
+<section class="section" id="menu">
+  <div class="section-head"><div><h2>Find your next favourite</h2><p class="sub">Fresh picks, comforting classics, and satisfying bites.</p></div></div>
+  <div class="filters">
+    <button class="filter active" data-filter="All">All meals</button><button class="filter" data-filter="Rice">Rice dishes</button><button class="filter" data-filter="Swallow">Swallow & soup</button><button class="filter" data-filter="Snacks">Snacks</button><button class="filter" data-filter="Drinks">Drinks</button>
+  </div>
+  <div class="layout"><div class="menu-grid" id="menu-grid"></div>
+    <aside class="cart" id="cart"><h2>🛒 Your Cart <span style="float:right;color:var(--muted);font-size:13px" id="cart-label">0 items</span></h2><div id="cart-items"><div class="empty">Your cart is waiting for something delicious. Add a meal to get started!</div></div><div class="total"><span>Total</span><span id="cart-total">₦0</span></div><button class="checkout-btn" onclick="goCheckout()">Continue to checkout →</button><div class="fineprint">Your order will be submitted for confirmation. Payment is by manual PalmPay bank transfer.</div></aside>
+  </div>
+</section>
+<section class="checkout" id="checkout">
+  <h2>Checkout, made simple.</h2><p class="sub">Add your delivery details, make your transfer, then submit your payment reference for review.</p>
+  <div class="steps">
+    <div class="panel"><h3>1. Delivery details</h3><p class="sub">Where should we bring your order?</p>
+      <div class="field"><label for="customer-name">Full name *</label><input id="customer-name" autocomplete="name" placeholder="Enter your full name" required></div>
+      <div class="field"><label for="customer-phone">Phone number *</label><input id="customer-phone" type="tel" autocomplete="tel" placeholder="e.g. 08012345678" required></div>
+      <div class="field"><label for="customer-address">Delivery address *</label><textarea id="customer-address" autocomplete="street-address" placeholder="House number, street, area, city" required></textarea></div>
+      <div class="field"><label for="customer-note">Order note (optional)</label><textarea id="customer-note" placeholder="Any delivery instructions or food preferences?"></textarea></div>
+    </div>
+    <div class="panel"><h3>2. Pay by PalmPay transfer</h3><p class="sub">Transfer the exact order total to the account below.</p>
+      <div class="account"><div class="account-label">Bank / payment provider</div><strong>PalmPay</strong><div class="account-label" style="margin-top:12px">Account number</div><div class="account-number"><span id="account-number">9113278202</span><button class="copy" onclick="copyAccount()">Copy</button></div><p><strong>Account name:</strong> David Mark Tokula Adejoh</p></div>
+      <div class="notice">⚠️ Before transferring, confirm the account name and number in your PalmPay app. Do not pay if the details shown by your banking app do not match.</div>
+      <div class="field"><label for="payment-ref">Transfer reference / transaction ID *</label><input id="payment-ref" placeholder="Enter the reference shown by your bank"></div>
+      <div class="field"><label for="payment-time">Approximate transfer time (optional)</label><input id="payment-time" placeholder="e.g. 2:35 pm"></div>
+      <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5"><input type="checkbox" id="payment-confirm" style="margin-top:3px"> I have made the transfer and checked the details above.</label>
+      <button class="checkout-btn" style="margin-top:16px" onclick="submitOrder()">Submit order for confirmation →</button>
+      <div class="fineprint">Submitting this form does not automatically verify payment. Keep your transfer receipt until the order is confirmed.</div>
+    </div>
+  </div>
+  <div class="confirm-box" id="confirmation" aria-live="polite"><h3>✓ Order submitted!</h3><span class="status">PENDING PAYMENT VERIFICATION</span><p id="confirmation-text"></p><p><strong>Important:</strong> Your order is not marked as paid yet. The store owner must confirm that the transfer arrived in PalmPay before preparing the order.</p><button class="copy" onclick="sendOrderToWhatsApp()">Send order to WhatsApp</button> <button class="copy" onclick="printOrder()">Print / save order details</button></div>
+</section>
+<section class="section" id="about"><h2>Good food. No fuss.</h2><p class="sub" style="max-width:650px;line-height:1.7">TastyBite makes it easy to browse the menu, build your cart, and send your order details. Menu prices and delivery arrangements should be confirmed by the store before payment.</p></section>
+</main>
+<footer class="footer"><div><strong style="font-size:19px">♨ Tasty<span style="color:var(--orange)">Bite</span></strong><p>Good Food. Great Vibes.</p></div><div>Fresh meals · Easy ordering · Friendly service</div><div>© <span id="year"></span> TastyBite</div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const meals = [
+{id:1,name:"Jollof Rice + Chicken",cat:"Rice",price:3500,emoji:"🍗",desc:"Smoky party-style jollof with seasoned chicken.",style:"rice"},
+{id:2,name:"Fried Rice + Chicken",cat:"Rice",price:3500,emoji:"🍛",desc:"Colourful fried rice with vegetables and chicken.",style:"rice"},
+{id:3,name:"White Rice + Stew",cat:"Rice",price:3000,emoji:"🍚",desc:"Fluffy rice with rich tomato stew.",style:"rice"},
+{id:4,name:"Pounded Yam + Egusi",cat:"Swallow",price:3000,emoji:"🥣",desc:"Smooth swallow with hearty egusi soup.",style:"soup"},
+{id:5,name:"Beans + Plantain",cat:"Rice",price:2500,emoji:"🍌",desc:"Comforting beans served with sweet plantain.",style:"snack"},
+{id:6,name:"Meat Pie",cat:"Snacks",price:800,emoji:"🥟",desc:"Golden pastry with a savoury filling.",style:"snack"},
+{id:7,name:"Chin Chin",cat:"Snacks",price:500,emoji:"🍪",desc:"Crunchy, bite-sized sweet snack.",style:"snack"},
+{id:8,name:"Chilled Zobo",cat:"Drinks",price:700,emoji:"🥤",desc:"Refreshing hibiscus drink, served cold.",style:"soup"}
+];
+const cart = {};
+const fmt = n => "₦" + n.toLocaleString("en-NG");
+let currentFilter="All", latestOrder=null;
+function renderMenu(){
+ const grid=document.getElementById("menu-grid");
+ const shown=meals.filter(m=>currentFilter==="All"||m.cat===currentFilter);
+ grid.innerHTML=shown.map(m=>`<article class="food-card"><div class="food-photo ${m.style}">${m.emoji}</div><div class="food-info"><h3>${m.name}</h3><p>${m.desc}</p><div class="price-row"><span>${fmt(m.price)}</span></div><button class="add" onclick="addToCart(${m.id})">＋ Add to cart</button></div></article>`).join("");
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();toast("Added to your cart");}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart();}
+function removeItem(id){delete cart[id];renderCart();}
+function total(){return Object.entries(cart).reduce((sum,[id,q])=>sum+meals.find(m=>m.id===Number(id)).price*q,0)}
+function count(){return Object.values(cart).reduce((a,b)=>a+b,0)}
+function renderCart(){
+ const el=document.getElementById("cart-items");
+ const entries=Object.entries(cart);
+ document.getElementById("cart-count").textContent=count();
+ document.getElementById("cart-label").textContent=count()+" item"+(count()===1?"":"s");
+ document.getElementById("cart-total").textContent=fmt(total());
+ if(!entries.length){el.innerHTML='<div class="empty">Your cart is waiting for something delicious. Add a meal to get started!</div>';return}
+ el.innerHTML=entries.map(([id,q])=>{const m=meals.find(x=>x.id===Number(id));return `<div class="cart-item"><div><strong>${m.name}</strong><small>${fmt(m.price)} each</small><div class="qty"><button aria-label="Decrease ${m.name}" onclick="changeQty(${m.id},-1)">−</button><span>${q}</span><button aria-label="Increase ${m.name}" onclick="changeQty(${m.id},1)">＋</button></div></div><div style="text-align:right;font-weight:800">${fmt(m.price*q)}<br><button class="remove" onclick="removeItem(${m.id})">Remove</button></div></div>`}).join("");
+}
+function goCheckout(){if(!count()){toast("Add at least one meal first");document.querySelector("#menu").scrollIntoView({behavior:"smooth"});return}document.querySelector("#checkout").scrollIntoView({behavior:"smooth"});}
+function copyAccount(){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText("9113278202").then(()=>toast("Account number copied")).catch(()=>toast("Account number: 9113278202"));}else{toast("Account number: 9113278202")}}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",2600)}
+async function submitOrder(){
+ if(!count()){toast("Your cart is empty");return}
+ const name=document.getElementById("customer-name").value.trim(),phone=document.getElementById("customer-phone").value.trim(),address=document.getElementById("customer-address").value.trim(),ref=document.getElementById("payment-ref").value.trim(),checked=document.getElementById("payment-confirm").checked;
+ if(!name||!phone||!address||!ref){toast("Please complete all required fields");return}
+ if(!checked){toast("Please confirm you made the transfer");return}
+ const items=Object.entries(cart).map(([id,quantity])=>({id:Number(id),quantity}));
+ const payload={customerName:name,customerPhone:phone,deliveryAddress:address,note:document.getElementById("customer-note").value.trim(),paymentReference:ref,items};
+ try{
+  const response=await fetch("/api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const result=await response.json();
+  if(!response.ok)throw new Error(result.error||"Order could not be submitted.");
+  latestOrder={orderId:result.orderId,name,phone,address,note:payload.note,ref,time:document.getElementById("payment-time").value.trim(),items:Object.entries(cart).map(([id,q])=>({name:meals.find(m=>m.id===Number(id)).name,qty:q,price:meals.find(m=>m.id===Number(id)).price})),total:result.totalNgn,submitted:new Date().toLocaleString()};
+  document.getElementById("confirmation-text").textContent=`Order ${result.orderId} has been saved. Total: ${fmt(result.totalNgn)}. WhatsApp alert status: ${result.whatsappNotification==="sent"?"sent to the store":"not sent yet — server WhatsApp setup may be incomplete"}. Payment status remains PENDING until the transfer is independently verified.`;
+  document.getElementById("confirmation").style.display="block";
+  document.getElementById("confirmation").scrollIntoView({behavior:"smooth",block:"center"});
+ }catch(err){
+  toast(err.message==="Failed to fetch"?"Start the TastyBite server first (see README_SETUP.txt).":err.message);
+ }
+}
+
+function sendOrderToWhatsApp(){
+ if(!latestOrder){toast("Submit your order details first");return}
+ const lines=[
+  "🍽️ *NEW TASTYBITE ORDER*",
+  "Order: "+latestOrder.orderId,
+  "Customer: "+latestOrder.name,
+  "Phone: "+latestOrder.phone,
+  "Delivery address: "+latestOrder.address,
+  latestOrder.note ? "Note: "+latestOrder.note : "",
+  "",
+  "*Items:*",
+  ...latestOrder.items.map(i=>"- "+i.name+" × "+i.qty+" — "+fmt(i.price*i.qty)),
+  "*TOTAL: "+fmt(latestOrder.total)+"*",
+  "",
+  "Payment provider: PalmPay",
+  "Payment reference: "+latestOrder.ref,
+  latestOrder.time ? "Approx. transfer time: "+latestOrder.time : "",
+  "",
+  "Please verify the transfer in PalmPay before marking this order as paid."
+ ].filter(Boolean);
+ const url="https://wa.me/2349113278202?text="+encodeURIComponent(lines.join("\n"));
+ window.open(url,"_blank");
+}
+
+function printOrder(){if(!latestOrder)return;const w=window.open("","_blank");if(!w){toast("Allow pop-ups to print order details");return}const items=latestOrder.items.map(i=>`<li>${i.name} × ${i.qty} — ${fmt(i.price*i.qty)}</li>`).join("");w.document.write(`<html><head><title>TastyBite ${latestOrder.orderId}</title></head><body style="font-family:Arial;padding:28px;max-width:650px;margin:auto"><h1>TastyBite — Order Summary</h1><h2>${latestOrder.orderId}</h2><p><b>Status:</b> Pending payment verification</p><p><b>Customer:</b> ${escapeHtml(latestOrder.name)}</p><p><b>Phone:</b> ${escapeHtml(latestOrder.phone)}</p><p><b>Delivery:</b> ${escapeHtml(latestOrder.address)}</p><h3>Items</h3><ul>${items}</ul><h2>Total: ${fmt(latestOrder.total)}</h2><p><b>Payment reference:</b> ${escapeHtml(latestOrder.ref)}</p><p><b>Submitted:</b> ${escapeHtml(latestOrder.submitted)}</p><p>Payment must be verified by the store owner before the order is marked paid.</p><button onclick="window.print()">Print / Save as PDF</button></body></html>`);w.document.close();}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));btn.classList.add("active");currentFilter=btn.dataset.filter;renderMenu()}));
+document.getElementById("year").textContent=new Date().getFullYear();
+renderMenu();renderCart();
+</script>
+</body></html>

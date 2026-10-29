@@ -119,7 +119,7 @@ async function submitOrder(){
  const items=Object.entries(cart).map(([id,quantity])=>({id:Number(id),quantity}));
  const payload={customerName:name,customerPhone:phone,deliveryAddress:address,note:document.getElementById("customer-note").value.trim(),paymentReference:ref,items};
  try{
-  const response=await fetch("/api/orders",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+  const response=await fetch("https://tastebite-1-f32n.onrender.com/api/orders",{method:"POST",headers:{"Content-Type":"application/json"} body:JSON.stringify(payload)});
   const result=await response.json();
   if(!response.ok)throw new Error(result.error||"Order could not be submitted.");
   latestOrder={orderId:result.orderId,name,phone,address,note:payload.note,ref,time:document.getElementById("payment-time").value.trim(),items:Object.entries(cart).map(([id,q])=>({name:meals.find(m=>m.id===Number(id)).name,qty:q,price:meals.find(m=>m.id===Number(id)).price})),total:result.totalNgn,submitted:new Date().toLocaleString()};

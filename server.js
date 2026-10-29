@@ -31,7 +31,22 @@ CREATE TABLE IF NOT EXISTS webhook_events (
   received_at TEXT NOT NULL
 );
 `);
+const FRONTEND_ORIGIN = "https://tastebite-dev.github.io";
 
+app.use((req, res, next) => {
+  if (req.headers.origin === FRONTEND_ORIGIN) {
+    res.setHeader("Access-Control-Allow-Origin", FRONTEND_ORIGIN);
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  }
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(express.static("."));
 app.use(express.json({ limit: "40kb" }));
